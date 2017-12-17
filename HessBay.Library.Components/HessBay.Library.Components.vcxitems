@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Label="Globals">
+    <MSBuildAllProjects>$(MSBuildAllProjects);$(MSBuildThisFileFullPath)</MSBuildAllProjects>
+    <HasSharedItems>true</HasSharedItems>
+    <ItemsProjectGuid>{307b4e94-e7c5-406b-b945-422165d21d2f}</ItemsProjectGuid>
+  </PropertyGroup>
+  <ItemDefinitionGroup>
+    <ClCompile>
+      <AdditionalIncludeDirectories>%(AdditionalIncludeDirectories);$(MSBuildThisFileDirectory)</AdditionalIncludeDirectories>
+    </ClCompile>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ProjectCapability Include="SourceItemsFromImports" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="$(MSBuildThisFileDirectory)readme.txt" />
+    <Text Include="$(MSBuildThisFileDirectory)library.properties" />
+    <Text Include="$(MSBuildThisFileDirectory)HBLib_Encoder.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <!-- <ClInclude Include="$(MSBuildThisFileDirectory)HessBay.Library.Components.h" /> -->
+    <None Include="$(MSBuildThisFileDirectory)Documentation\Images\Encoder Signal.vsdx" />
+    <None Include="$(MSBuildThisFileDirectory)HessBay.Library.Components.Encoder.md">
+      <FileType>Document</FileType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)HBLib_Encoder.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="$(MSBuildThisFileDirectory)Documentation\Images\Encoder_Pins.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Documentation\Images\Encoder_Signal_Clockwise.png" />
+    <Image Include="$(MSBuildThisFileDirectory)Documentation\Images\Encoder_Signal_CounterClockwise.png" />
+  </ItemGroup>
+</Project>
