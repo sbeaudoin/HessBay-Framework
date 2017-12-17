@@ -79,25 +79,33 @@ resolution.  Also, in this mode, we don't compensate for possible missing state 
 
 ## Implementation
 
-In your sketch file, include the header file :
+#### Hardware
 
-'''
-//////////
-// Includes
+- Pin A and B of the encoder are connected directly to a digital pin of the arduino board.  Except if you want to use your own 
+  pull up resistors.
+- Ground pin is connected to a ground pin of the arduino board.
 
+#### Software
+
+- [A] : Inclusion of the header file of the library.
+- [B] : I use namespaces.  To be able to use the code without having to specify the namespace at each line, the 
+        namespace definition is specified here.
+- [C] : Define your constants.
+- [D] : Initialize your instance.  There is two version of the constructor, depending if you want the library to use interrupts
+        or not.  I suggest you use the interrupt driven version to be sure you don't miss any encoder changes.
+- [E] : Any variable you use in the callback function should be volatiles.
+- [F] : This is an example of the callback function who is called each time the pin A or B state changes.
+
+```
+//-----\ [A]
 #include <HBLib_Encoder.h>
+//-----/ [A]
 
-//
-//////////
-
-//////////
-// Name space definition 
-//
-
+//-----\ [B]
 using namespace HessBay::Library::Components;
+//-----/ [B]
 
-//
-//////////
+//-----\ [C]
 
 //////////
 // Constants definition.
@@ -120,10 +128,9 @@ const int ENCODER_HIGHSPEED_MULTIPLIER = 5;
 //
 //////////
 
-//////////
-// Global variables definition.
+//-----/ [C]
 
-// Encoder class under test.
+//-----\ [D]
 Encoder _encoder = Encoder(
 	PIN_ENCODER_A,
 	PIN_ENCODER_B,
@@ -132,9 +139,14 @@ Encoder _encoder = Encoder(
 	ENCODER_HIGHSPEED_TRIGGER_MS,
 	ENCODER_HIGHSPEED_MULTIPLIER,
 	HandleEncoderInterrupt);
+//-----/ [D]
+
+//-----\ [E]
 
 // Cumulative count of encoder value changes.
 volatile int _encoderCount = 0;
+
+//-----/ [E]
 
 //
 //////////
@@ -148,6 +160,8 @@ void loop()
 {
 }
 
+//-----\ [F]
+
 /////
 // Handle rotary encoder interrupts who occurs on value changes.
 /////
@@ -160,4 +174,37 @@ void HandleEncoderInterrupt()
 		Serial.println(_encoderCount);
 	}
 }
-'''
+
+//-----/ [F]
+
+```
+
+## Class content
+
+### Constructors
+
+```
+Encoder(
+    byte pinA, 
+    byte pinB, 
+    bool highResolution, 
+    bool pullUpInternal, 
+    int highSpeedTriggerMS, 
+    int highSpeedTriggerMultiplier);
+Encoder(
+    byte pinA, 
+    byte pinB, 
+    bool highResolution, 
+    bool pullUpInternal, 
+    int highSpeedTriggerMS, 
+    int highSpeedTriggerMultiplier, 
+    void(*callBack)(void));
+```
+
+### Properties 
+No properties are available.
+
+### Functions
+```
+int DeltaValue();
+```
