@@ -7,4 +7,4 @@ It consists of the following namespaces :
 ## HessBay.Library.Components
 Includes driver for different type of components.
 
-- [Rotary encoder.](HessBay-Framework/HessBay.Library.Components/HessBay.Library.Components.Encoder.md)
+- [Rotary encoder.](HessBay.Library.Components/HessBay.Library.Components.Encoder.md)
