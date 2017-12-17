@@ -13,18 +13,18 @@ The consumer of this class must declare and interrupt on pin change of the A and
 Considering the two signal pins of the rotary encoder pin A and pin B.  Depending of the way you connected those pins to the 
 encoder, a clockwise rotation will produce the following signal.
 
-[Clockwise Signal](Documentation/Images/Encoder_Signal_Clockwise.png?raw=true)
+![Clockwise Signal](Documentation/Images/Encoder_Signal_Clockwise.png?raw=true)
 
 A counter clockwise rotation will produce the following signal.
 
-[Counter Clockwise Signal](Documentation/Images/Encoder_Signal_CounterClockwise.png?raw=true)
+![Counter Clockwise Signal](Documentation/Images/Encoder_Signal_CounterClockwise.png?raw=true)
 
 In a forward motion, the pin A signal follow the start of pin B by half a cycle.  In a reverse motion, pin A **precede** the 
 start of pin B by half a cycle.
 
 Here is the pins used for this documentation.
 
-[Encoder Pins Used](Documentation/Images/Encoder_Pins.png?raw=true)
+![Encoder Pins Used](Documentation/Images/Encoder_Pins.png?raw=true)
 
 ### Transitions resolution
 
