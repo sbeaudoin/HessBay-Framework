@@ -13,18 +13,18 @@ The consumer of this class must declare and interrupt on pin change of the A and
 Considering the two signal pins of the rotary encoder pin A and pin B.  Depending of the way you connected those pins to the 
 encoder, a clockwise rotation will produce the following signal.
 
-![Clockwise Signal](D:/Code/Arduino/HessBay/HessBay.Library.Components/HessBay.Library.Components/Documentation/Images/Encoder_Signal_Clockwise.png)
+[Clockwise Signal](Documentation/Images/Encoder_Signal_Clockwise.png)
 
 A counter clockwise rotation will produce the following signal.
 
-![Counter Clockwise Signal](D:/Code/Arduino/HessBay/HessBay.Library.Components/HessBay.Library.Components/Documentation/Images/Encoder_Signal_CounterClockwise.png)
+[Counter Clockwise Signal](Documentation/Images/Encoder_Signal_CounterClockwise.png)
 
 In a forward motion, the pin A signal follow the start of pin B by half a cycle.  In a reverse motion, pin A **precede** the 
 start of pin B by half a cycle.
 
 Here is the pins used for this documentation.
 
-![Encoder Pins Used](D:/Code/Arduino/HessBay/HessBay.Library.Components/HessBay.Library.Components/Documentation/Images/Encoder_Pins.png)
+[Encoder Pins Used](Documentation/Images/Encoder_Pins.png)
 
 ### Transitions resolution
 
