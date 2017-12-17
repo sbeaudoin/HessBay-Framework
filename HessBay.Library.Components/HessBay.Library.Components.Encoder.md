@@ -37,7 +37,7 @@ For each transition, a state value if deducted.  This state is in a 4 bit forms,
 specific point in time.  Here is a truth table for each possible transitions by state value.
 
 |Previous (A/B)  |New (A/B)  |Type      |Direction          |Delta Value              |State Value  |
-|================|===========|==========|===================|=========================|=============|
+|---|---|---|---|---|---|
 | L/L            | L/L       |Stationary|None               | +0                      | 0000 = 0    |
 | L/L            | L/H       |Normal    |Clockwise          | +1                      | 0001 = 1    |
 | L/L            | H/L       |Normal    |Counter            | -1                      | 0010 = 2    |
