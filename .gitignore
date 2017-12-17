@@ -1,2 +1,3 @@
-Debug\*
-_vm\*
+**/Debug/
+**/_vm/
+
